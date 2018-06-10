@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration scan="true" scanPeriod="60 seconds" debug="false">
+	<property name="APP_NAME" value="hjb-marketing" />
+	<!-- <property name="LOG_ROOT_DIR" value="/home/bizware/logs/hjb_marketing" 
+		/> -->
+	<property name="LOG_ROOT_DIR" value="/Users/xiamh/work/workspace98/kpmsd/kpms-data" />
+	<!--<property name="LOG_ROOT_DIR" value="E:/mylog/${APP_NAME}" /> -->
+	<contextName>${APP_NAME}</contextName>
+
+	<!-- ch.qos.logback.core.ConsoleAppender 控制台输出 -->
+	<appender name="console" class="ch.qos.logback.core.ConsoleAppender">
+		<encoder>
+			<pattern>[%-5level] %d{yyyy-MM-dd HH:mm:ss} [%thread] %logger{36} - %msg%n</pattern>
+		</encoder>
+	</appender>
+
+	<!-- ch.qos.logback.core.rolling.RollingFileAppender 文件日志输出 -->
+	<appender name="file"
+		class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>${LOG_ROOT_DIR}/current.log</file>
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<fileNamePattern>${LOG_ROOT_DIR}/%d{yyyy-MM-dd}.log</fileNamePattern>
+			<maxHistory>3</maxHistory>
+		</rollingPolicy>
+
+		<encoder>
+			<pattern>[%-5level] %d{yyyy-MM-dd HH:mm:ss} [%thread] %logger{36} - %msg%n</pattern>
+		</encoder>
+	</appender>
+
+	<root level="INFO">
+		<appender-ref ref="file" />
+		<appender-ref ref="console" />
+	</root>
+</configuration>

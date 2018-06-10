@@ -1,0 +1,12 @@
+Manifest-Version: 1.0
+Implementation-Title: admin-common
+Implementation-Version: 0.0.1-SNAPSHOT
+Archiver-Version: Plexus Archiver
+Built-By: xiamh
+Implementation-Vendor-Id: com.admin
+Created-By: Apache Maven 3.3.9
+Build-Jdk: 1.8.0_91
+Implementation-URL: http://projects.spring.io/spring-boot/admin/admin-
+ common/
+Implementation-Vendor: Pivotal Software, Inc.
+
